@@ -1,0 +1,99 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas por defecto */
+    grid-auto-rows: minmax(200px, auto); /* Filas con altura mínima dinámica */
+    gap: 16px;
+    padding: 16px;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex; /* Permite centrar el contenido */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 16px;
+}
+
+/* Mantener la estructura de las tarjetas */
+.card-1 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.card-2 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.card-3 {
+    grid-column: span 1;
+    grid-row: span 2; /* Ocupa dos filas */
+}
+
+.card-4 {
+    grid-column: span 1;
+    grid-row: span 2; /* Ocupa dos filas */
+}
+
+.card-5 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.card-6 {
+    grid-column: span 2; /* Ocupa dos columnas */
+    grid-row: span 1;
+}
+
+.card-7 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.card-8 {
+    grid-column: span 2; /* Ocupa dos columnas */
+    grid-row: span 1;
+}
+
+/* Responsividad para pantallas medianas */
+@media (max-width: 992px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    }
+
+    .card-6, .card-8 {
+        grid-column: span 2; /* Seguirán ocupando dos columnas */
+    }
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 576px) {
+    .grid-container {
+        grid-template-columns: repeat(1, 1fr); /* Una columna */
+    }
+
+    .card {
+        grid-column: span 1; /* Todas las tarjetas ocupan una columna */
+        grid-row: span 1; /* Todas ocupan una sola fila */
+    }
+}
+
+/* Ajuste específico del contenedor del gráfico */
+.card > div {
+    width: 100%; /* Asegura que el gráfico ocupe todo el ancho */
+    height: 100%; /* Asegura que el gráfico ocupe toda la altura */
+    display: flex; /* Alineación del gráfico dentro del contenedor */
+    align-items: center;
+    justify-content: center;
+}
+
+.responsive-chart {
+    width: 100%;
+    height: 100%;
+    max-width: 100%; /* Evita desbordamientos */
+    max-height: 100%;
+}

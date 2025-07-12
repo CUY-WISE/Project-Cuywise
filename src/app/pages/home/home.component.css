@@ -1,0 +1,91 @@
+.main-content .container-fluid .row {
+    display: flex;
+    width: 100%;
+}
+
+/* Sidebar oculto en pantallas pequeñas */
+.sidenav {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    transition: transform 0.3s ease-in-out;
+    background-color: #fff;
+}
+
+.sidenav.d-none {
+    transform: translateX(-100%);
+}
+
+.sidenav.d-md-block {
+    transform: translateX(0);
+}
+
+.sidenav.hidden {
+    transform: translateX(-100%);
+}
+
+/* Clase para el enlace activo */
+.active-link {
+    color: #fff;
+    /* Color del texto */
+    background-color: #b4bebb9a;
+    /* Fondo azul */
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* Opcional: Ajuste de íconos cuando están activos */
+.active-link i {
+    opacity: 1;
+    /* Aumentar visibilidad del ícono */
+}
+
+.breadcrumb {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.breadcrumb-item.active {
+    color: #007bff;
+    /* Color para el breadcrumb activo */
+}
+
+.position-5 {
+    position: absolute;
+    /* Asegúrate de que el elemento esté posicionado absolutamente */
+    left: 5%;
+    /* Posición a la izquierda del contenedor al 5% */
+}
+
+/* Ocultar botón en pantallas grandes */
+@media (min-width: 768px) {
+    .btn-light.d-md-none {
+        display: none;
+    }
+}
+
+/* Ajustar el contenido según el tamaño del sidebar */
+@media (min-width: 768px) {
+    .main-content {
+        margin-left: 250px;
+    }
+
+    .sidenav.hidden+.main-content {
+        margin-left: 0;
+    }
+}
+
+/* En pantallas pequeñas, ocultar automáticamente el sidebar */
+@media (max-width: 768px) {
+    .sidenav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1050;
+        width: 250px;
+    }
+}
